@@ -12,7 +12,9 @@ export class FruitTableViewModel {
   constructor(private fruitService: FruityViceService) {
     this.loadingFruit$.next(true);
     this.fruitService.getAllFruits().subscribe(fruitResponse => {
-      this.loadingFruit$.next(false);
+      console.log({fruitResponse});
+
+      this.loadingFruit$.next(true);
       this.fruitData$.next(fruitResponse);
     });
   }
